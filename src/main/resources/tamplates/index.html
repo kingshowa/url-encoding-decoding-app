@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>URL Encoder/Decoder</title>
+</head>
+<body>
+<h1>URL Encoder/Decoder</h1>
+<form method="post" action="/process">
+  <label for="url">Enter URL:</label><br>
+  <input type="text" id="url" name="url" required><br><br>
+  <input type="radio" id="encode" name="action" value="encode" required>
+  <label for="encode">Encode</label><br>
+  <input type="radio" id="decode" name="action" value="decode">
+  <label for="decode">Decode</label><br><br>
+  <button type="submit">Submit</button>
+</form>
+<hr>
+<div th:if="${original}">
+  <p>Original: <b th:text="${original}"></b></p>
+  <p>Result: <b th:text="${result}"></b></p>
+</div>
+</body>
+</html>
